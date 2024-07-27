@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2><span>My first design with:</span><br>AnimeJs</h2>
+    </div>
+
+    <script src="anime.min.js"></script>
+
+    <style>
+        .block {
+            position: absolute;
+            width: 50px;
+            height: 100px;
+            background: #e80202;
+            box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.2);
+            opacity: 0; /* Defina a opacidade inicial para 0 */
+            transform: scale(0); /* Defina a escala inicial para 0 */
+        }
+    </style>
+    
+    <script>
+        const container = document.querySelector('.container');
+    
+        // Adicione os blocos à pilha inicial com atraso
+        for (var i = 0; i <= 150; i++) {
+            const blocks = document.createElement('div');
+            blocks.classList.add('block');
+            container.appendChild(blocks);
+        }
+    
+        function animateBlocks() {
+            anime({
+                targets: '.block',
+                translateX: function () {
+                    return anime.random(-1250, 1250);
+                },
+                translateY: function () {
+                    return anime.random(-500, 500);
+                },
+                scale: function () {
+                    return anime.random(2, 5);
+                },
+                opacity: 1, // Defina a opacidade final para 1
+                easing: 'linear',
+                duration: 3000,
+                delay: anime.stagger(10),
+                complete: animateBlocks, // Remova esta linha para evitar repetição automática
+            });
+        }
+    
+        // Inicie a animação apenas uma vez
+        animateBlocks();
+    </script>
+    
+
+</body>
+</html>
