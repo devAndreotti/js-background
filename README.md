@@ -10,7 +10,7 @@
 </p>
 
 <div align="center">
-  <img src="./animejs.png" alt="Dropdown Banner"/>
+  <img src="./animejs.png" alt="Retângulos Banner"/>
 </div>
 
 ## 🛠️ Tecnologias Utilizadas
