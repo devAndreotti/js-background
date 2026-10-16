@@ -29,7 +29,7 @@ body {
 h2 {
     color: #fff;
     text-align: center;
-    font-size: 15vh;
+    font-size: min(15vh, 18.5vw);
     line-height: 0.6em;
     z-index: 1000;
     font-weight: 900;
